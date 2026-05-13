@@ -1,151 +1,77 @@
-AI-Based Virtual Interviewer for Automated Candidate Evaluation
+# AI-Based Virtual Interviewer Using Deep Learning
 
-An AI-powered interview evaluation system that analyzes candidate interview videos using Deep Learning models including DNN, CNN, LSTM, and Hybrid CNN+LSTM+DNN architectures. The system extracts video frames using OpenCV, performs behavioral analysis, predicts candidate selection status, and generates automated feedback through a Streamlit web application.
+An AI-powered interview evaluation system that analyzes candidate interview videos using Deep Learning models including DNN, CNN, LSTM, and Hybrid CNN+LSTM+DNN architectures.
 
-Project Overview
+---
 
-This project automates the initial screening process in recruitment by evaluating recorded interview videos. The system analyzes:
+# Features
 
-Confidence
-Communication
-Facial Expression
-Eye Contact
-Overall Interview Performance
+- Interview video upload and analysis
+- OpenCV frame extraction
+- CNN for spatial feature extraction
+- LSTM for temporal learning
+- DNN baseline model
+- Hybrid CNN + LSTM + DNN model
+- Automated score prediction
+- Rule-based feedback generation
+- Streamlit deployment
 
-The final prediction classifies candidates as:
+---
 
-Selected → Score ≥ 70
-Not Selected → Score < 70
+# Technologies Used
 
-The project includes:
+- Python
+- TensorFlow / Keras
+- OpenCV
+- NumPy
+- Pandas
+- Matplotlib
+- Streamlit
 
-Deep Learning model training
-Comparative analysis of multiple architectures
-Mathematical modeling
-Automated feedback generation
-Streamlit deployment
+---
 
-Based on our research paper:
+# Workflow
 
-
-Technologies Used
-Python
-TensorFlow / Keras
-OpenCV
-NumPy
-Pandas
-Matplotlib
-Scikit-learn
-Streamlit
-Deep Learning Models Used
-1. DNN Baseline
-
-Uses structured CSV features:
-
-confidence
-communication
-expression
-eye_contact
-score
-2. CNN Frame-Based Model
-
-Extracts spatial features from video frames.
-
-3. LSTM Temporal Model
-
-Captures behavioral changes across video frames over time.
-
-4. Hybrid CNN + LSTM + DNN Model
-
-Combines:
-
-CNN spatial learning
-LSTM temporal learning
-DNN structured feature learning
-Workflow
+```text
 Upload Video
-      ↓
-Frame Extraction using OpenCV
-      ↓
+↓
+Frame Extraction
+↓
 Preprocessing
-(Resize + RGB Conversion + Normalization)
-      ↓
+↓
 Deep Learning Inference
-(DNN / CNN / LSTM / Hybrid)
-      ↓
+↓
 Score Prediction
-      ↓
-Selection Decision
-      ↓
-Automated Feedback Generation
+↓
+Selected / Not Selected
+↓
+Feedback Generation
+```
 
-Workflow figure used in the research paper:
+---
 
+# Selection Rule
 
-Dataset Information
-
-Dataset contains:
-
-Interview videos
-Behavioral scores
-Binary decision labels
-
-CSV Columns:
-
-video_name
-confidence
-communication
-expression
-eye_contact
-Score
-decision
-Preprocessing Steps
-Video Processing
-20 frames extracted per video
-Uniform frame sampling using np.linspace
-Frames resized to 64 × 64
-Converted from BGR → RGB
-Pixel normalization using /255
-Tensor Shape
-(20, 64, 64, 3)
-Selection Rule
+```python
 if score >= 70:
     decision = "Selected"
 else:
     decision = "Not Selected"
-Performance Metrics
+```
 
-Models evaluated using:
+---
 
-Accuracy
-Precision
-Recall
-F1-Score
-Validation Loss
-Experimental Results
-Model	Accuracy	F1-Score
-DNN	95%	95.7%
-CNN	90%	90.9%
-LSTM	90%	91.7%
-Hybrid	95%	95.7%
+# Run Application
 
-Performance table from research paper:
-
-
-Streamlit Deployment
-
-The project includes a Streamlit web application where users can:
-
-Upload interview videos
-Run AI evaluation
-View prediction score
-Get candidate selection status
-Receive automated feedback
-
-Run application:
-
+```bash
 streamlit run app.py
-Project Structure
+```
+
+---
+
+# Project Structure
+
+```text
 AI_Virtual_Interviewer/
 │
 ├── dataset/
@@ -156,25 +82,47 @@ AI_Virtual_Interviewer/
 ├── requirements.txt
 ├── README.md
 └── research_paper.pdf
-Installation
-Clone Repository
+```
+
+---
+
+# Installation
+
+## Clone Repository
+
+```bash
 git clone <repository_link>
 cd AI_Virtual_Interviewer
-Install Dependencies
+```
+
+## Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Future Scope
-Real-time interview analysis
-Audio and speech analysis
-Emotion recognition
-Transformer-based architectures
-Large-scale recruitment deployment
-Research Paper
+```
+
+---
+
+# Future Scope
+
+- Real-time interview analysis
+- Audio and speech analysis
+- Emotion recognition
+- Transformer-based architectures
+- Large-scale recruitment deployment
+
+---
+
+# Research Paper
 
 Research paper included in repository:
 
 AI-Based Virtual Interviewer for Automated Candidate Evaluation
 
-Paper reference:
+---
+
+**#References **
+
 1. Satheesh Kumar A., Naveena Devi S., Preetha R., and Subika K. V.,
    “Body Language and Speech Analysis Using Deep Learning for Enhanced Virtual Job Interviews,”
    *Proceedings of ICRDICCT 2025*, pp. 219–225, 2025. ([SciTePress][1])
@@ -215,11 +163,16 @@ Paper reference:
     “Temporal Attention Networks for Candidate Behavior Analysis,”
     *Expert Systems with Applications*, vol. 240, 2025.
 
-Authors
-Shruti Biradar   (202402040027)
-Saishwari Korade (202402040028)
+
+# Authors
+
+- Shruti Biradar
+- Saishwari Korade
 
 MIT Academy of Engineering, Pune
 
-License
+---
+
+# License
+
 This project is developed for academic and research purposes.
