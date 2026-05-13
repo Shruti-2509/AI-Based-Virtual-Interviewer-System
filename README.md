@@ -121,7 +121,7 @@ AI-Based Virtual Interviewer for Automated Candidate Evaluation
 
 ---
 
-**#References **
+# References
 
 1. Satheesh Kumar A., Naveena Devi S., Preetha R., and Subika K. V.,
    “Body Language and Speech Analysis Using Deep Learning for Enhanced Virtual Job Interviews,”
