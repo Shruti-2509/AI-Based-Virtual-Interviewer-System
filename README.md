@@ -166,8 +166,8 @@ AI-Based Virtual Interviewer for Automated Candidate Evaluation
 
 # Authors
 
-- Shruti Biradar
-- Saishwari Korade
+- Shruti Biradar [202402040027]
+- Saishwari Korade [202402040028]
 
 MIT Academy of Engineering, Pune
 
